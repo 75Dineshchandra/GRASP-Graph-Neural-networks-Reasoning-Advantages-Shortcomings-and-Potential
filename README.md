@@ -59,5 +59,5 @@
 
 ## Contact
 - Author: Amir Jafari
-- Email: [ajafari@gmail.com](mailto:ajafari@gmail.com)
-- GitHub: [mims-harvard/TxAgent](https://github.com/mims-harvard/TxAgent)
+- Email: [ajafari@gmail.com](mailto:ajafari@email.gwu.edu)
+- GitHub: [Dinesh](https://github.com/75Dineshchandra)
