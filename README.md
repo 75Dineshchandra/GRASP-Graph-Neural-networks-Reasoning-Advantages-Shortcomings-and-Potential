@@ -138,7 +138,7 @@ Most LLM-based agents rely on **textual retrieval** and suffer from **lack of ex
 | `pharmacodynamics`    | Effects on body                        |
 | `category`, `atc_*`   | Drug classification (e.g., ATC system) |
 
-### 6–9. Other Files
+### Other Files
 
 | File                               | Purpose                                           |
 | ---------------------------------- | ------------------------------------------------- |
