@@ -1,12 +1,6 @@
 
 # 📘 PrimeTxAgent: Therapeutic Reasoning via Knowledge Graphs using PrimeKG
 
-**Proposed by**: Dinesh Chandra Gaddam and Ganesh Kumar Boini  
-**Advisor**: Dr. Amir Jafari  
-**Program**: M.S. Data Science, The George Washington University  
-**Contact**: [dineshchandragaddam2002@gmail.com](mailto:dineshchandragaddam2002@gmail.com)  
-**GitHub**: [75Dineshchandra](https://github.com/75Dineshchandra)
-
 ---
 
 ## 🎯 Objective
