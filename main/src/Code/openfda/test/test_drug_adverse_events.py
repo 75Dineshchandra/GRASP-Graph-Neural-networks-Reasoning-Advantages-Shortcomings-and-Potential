@@ -91,8 +91,7 @@ def get_top_adverse_reactions(drug_name):
     }
     return fetch_data("drug/event.json", params)
 
-if __name__ == "__main__":
-    # Example test runs
+def run_demo():
     print("\n=== Recent Adverse Events: Ibuprofen ===")
     pprint.pprint(get_adverse_events("Ibuprofen"))
 
@@ -104,3 +103,6 @@ if __name__ == "__main__":
 
     print("\n=== Top Adverse Reactions: Lisinopril ===")
     pprint.pprint(get_top_adverse_reactions("Lisinopril"))
+
+if __name__ == "__main__":
+    run_demo()

@@ -61,8 +61,7 @@ def get_drug_recalls(substance, limit=3):
     }
     return fetch_data("drug/enforcement.json", params)
 
-if __name__ == "__main__":
-    # Example test queries
+def run_demo():
     print("\n=== Drug Recalls: Valsartan ===")
     pprint.pprint(get_drug_recalls("Valsartan"))
 
@@ -74,3 +73,6 @@ if __name__ == "__main__":
 
     print("\n=== Drug Recalls: Ranitidine ===")
     pprint.pprint(get_drug_recalls("Ranitidine"))
+
+if __name__ == "__main__":
+    run_demo()

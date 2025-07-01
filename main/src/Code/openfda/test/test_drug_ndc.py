@@ -62,8 +62,7 @@ def get_ndc_info(drug_name, limit=3):
     }
     return fetch_data("drug/ndc.json", params)
 
-if __name__ == "__main__":
-    # Example test queries
+def run_demo():
     print("\n=== NDC Info: Advil ===")
     pprint.pprint(get_ndc_info("Advil"))
 
@@ -75,3 +74,6 @@ if __name__ == "__main__":
 
     print("\n=== NDC Info: Zyrtec ===")
     pprint.pprint(get_ndc_info("Zyrtec"))
+
+if __name__ == "__main__":
+    run_demo()

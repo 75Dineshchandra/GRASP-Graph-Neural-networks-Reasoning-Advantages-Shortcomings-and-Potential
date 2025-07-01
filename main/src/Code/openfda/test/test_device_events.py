@@ -64,8 +64,7 @@ def get_device_events(device_name, limit=3):
     }
     return fetch_data("device/event.json", params)
 
-if __name__ == "__main__":
-    # Example test queries
+def run_demo():
     print("\n=== Device Events: Insulin Pump ===")
     pprint.pprint(get_device_events("Insulin Pump"))
 
@@ -77,3 +76,6 @@ if __name__ == "__main__":
 
     print("\n=== Device Events: Hip Implant ===")
     pprint.pprint(get_device_events("Hip Implant"))
+
+if __name__ == "__main__":
+    run_demo()

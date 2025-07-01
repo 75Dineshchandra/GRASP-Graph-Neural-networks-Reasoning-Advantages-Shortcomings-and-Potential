@@ -61,8 +61,7 @@ def get_food_recalls(product, limit=3):
     }
     return fetch_data("food/enforcement.json", params)
 
-if __name__ == "__main__":
-    # Example test queries
+def run_demo():
     print("\n=== Food Recalls: Peanut Butter ===")
     pprint.pprint(get_food_recalls("Peanut Butter"))
 
@@ -74,3 +73,6 @@ if __name__ == "__main__":
 
     print("\n=== Food Recalls: Frozen Berries ===")
     pprint.pprint(get_food_recalls("Frozen Berries"))
+
+if __name__ == "__main__":
+    run_demo()

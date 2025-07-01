@@ -58,8 +58,7 @@ def query_drug_label(brand_name, limit=1):
     }
     return fetch_data("drug/label.json", params)
 
-if __name__ == "__main__":
-    # Sample test queries
+def run_demo():
     drugs = [
         ("Tylenol", 1),
         ("Zyrtec", 2),
@@ -70,5 +69,7 @@ if __name__ == "__main__":
 
     for brand, limit in drugs:
         print(f"\n=== Drug Label: {brand} ===")
-        result = query_drug_label(brand, limit=limit)
-        pprint.pprint(result)
+        pprint.pprint(query_drug_label(brand, limit=limit))
+
+if __name__ == "__main__":
+    run_demo()
