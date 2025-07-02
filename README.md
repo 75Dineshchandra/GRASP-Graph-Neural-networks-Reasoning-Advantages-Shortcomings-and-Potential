@@ -1,148 +1,27 @@
+# **Knowledge Graph-Enhanced Therapeutic Agent (KgTxAgent)**
 
-# 📘 PrimeTxAgent: Therapeutic Reasoning via Knowledge Graphs using PrimeKG
+## **Overview**
+This research project develops an enhanced therapeutic reasoning agent that integrates PrimeKG (Precision Medicine Knowledge Graph) with the TxAgent framework for improved biomedical decision-making. The project combines structured knowledge representation with large language model capabilities to create a more comprehensive and contextually-aware therapeutic reasoning system. The enhanced agent leverages the rich biomedical relationships encoded in PrimeKG to provide evidence-based therapeutic recommendations across multiple biological scales.
 
----
+## **Key Features**
 
-## 🎯 Objective
+* **Knowledge Graph Integration Pipeline:** Incorporates PrimeKG as the core knowledge foundation, utilizing its 17,080 diseases and 4,050,249 biomedical relationships to enhance therapeutic reasoning capabilities beyond traditional text-based approaches.
 
-The aim of **PrimeTxAgent** is to develop a biomedical reasoning agent that performs **therapeutic inference** using a structured, explainable **knowledge graph (KG)** derived from the **PrimeKG** dataset. Inspired by Harvard's **TxAgent**, this system incorporates **multi-hop reasoning** across graph paths and integrates curated biomedical tools for drug-disease-treatment evaluation.
+* **Multi-Scale Biomedical Reasoning:** Integrates relationships spanning molecular, cellular, tissue, and organ levels from PrimeKG to provide comprehensive therapeutic analysis that considers the full spectrum of biological interactions and disease mechanisms.
 
----
+* **Enhanced Entity Linking System:** Implements advanced biomedical entity recognition and linking capabilities that connect textual mentions to PrimeKG entities, enabling more accurate knowledge retrieval and contextual understanding for therapeutic queries.
 
-## 🧬 Dataset
+* **Graph-Aware Decision Making:** Utilizes sophisticated graph traversal algorithms and multi-hop reasoning across PrimeKG's structure to identify relevant therapeutic pathways, drug-disease associations, and potential contraindications for evidence-based recommendations.
 
-We use the [**PrimeKG**](https://github.com/mims-harvard/PrimeKG) dataset, which consists of over **4 million biomedical relations** involving drugs, diseases, phenotypes, genes, pathways, anatomical sites, and more.
+* **Precision Medicine Integration:** Leverages PrimeKG's comprehensive disease coverage and drug association data to support personalized treatment recommendations, drug repurposing opportunities, and precision medicine applications.
 
-In addition, curated biomedical APIs from **ToolUniverse**, **OpenFDA**, and **Open Targets** may be integrated to supplement external reasoning and enrich entity context.
+## **Rich Dataset**
+PrimeKG (Precision Medicine Knowledge Graph) serves as the primary knowledge source, integrating data from 20 high-quality biomedical resources including disease ontologies (MONDO, HPO), drug databases (DrugBank, SIDER), protein interaction networks (STRING, BioGRID), and pathway databases (KEGG, Reactome). The knowledge graph contains 17,080 diseases with 4,050,249 relationships across ten major biological scales. Additionally, the project utilizes the original TxAgent framework's biomedical reasoning capabilities and integrates clinical case studies for validation and performance evaluation.
 
----
+## **Model Architectures**
+This research project enhances the TxAgent architecture with knowledge graph-aware components. The core system utilizes transformer-based models for natural language understanding while incorporating graph neural networks for processing PrimeKG's structure and relationships. The enhanced architecture includes a Knowledge Graph Encoder that processes biomedical entities and their relationships, an Entity Linking Module for accurate biomedical entity recognition, and a Graph-Aware Reasoning Engine that combines knowledge graph embeddings with language model representations. The Multi-Modal Fusion Layer integrates structured knowledge from PrimeKG with unstructured clinical text to provide comprehensive therapeutic understanding and evidence-based decision making.
 
-## 🤖 Rationale
+## **Knowledge Graph Integration**
+The project implements sophisticated knowledge graph querying and reasoning mechanisms to leverage PrimeKG's comprehensive biomedical knowledge. The system performs entity linking to map clinical mentions to PrimeKG entities, executes multi-hop graph traversals to identify relevant therapeutic pathways, and utilizes graph-guided generation to ensure recommendations are grounded in established biomedical knowledge. The integration enables the agent to access detailed drug-disease associations, biological pathway information, and mechanism-based therapeutic insights that significantly enhance the accuracy and reliability of therapeutic recommendations compared to traditional text-only approaches.
 
-Most LLM-based agents rely on **textual retrieval** and suffer from **lack of explainability**. PrimeTxAgent leverages **graph-based reasoning** to perform transparent, structured, and multi-relational drug-disease inference. This enables:
-
-- Graph-based explainability
-- Integration with biomedical ontologies (e.g., MONDO, DrugBank)
-- Enhanced interpretability over LLM-based black-box agents
-
----
-
-## ⚙️ Approach
-
-### ✅ Phase 1 – Graph Construction
-- Parse and enrich PrimeKG files
-- Build graph database using **NetworkX** or **Neo4j**
-- Merge node-level descriptions from drug/disease features
-
-### ✅ Phase 2 – Tool Integration
-- Wrap biomedical APIs like **DrugChecker**, **SideEffectLinker**, **PathwayAnalyzer**
-- Adapt scripts from **ToolUniverse**
-
-### ✅ Phase 3 – Agent Development
-- Create a reasoning engine that:
-  - Extracts relevant subgraphs
-  - Performs path-based multi-hop reasoning
-  - Verifies hypotheses using external tools
-
-### ✅ Phase 4 – Evaluation
-- Benchmark on **DrugPC**, **TreatmentPC**, and **DescriptionPC** tasks
-- Evaluate precision, coverage, and explainability
-
-### ✅ Phase 5 – Optional LLM Integration
-- Add **LLM-based interface** (RAG or function-calling)
-- Enable user-friendly querying via natural language
-
----
-
-## 📅 Timeline
-
-| Week  | Milestone                                           |
-| ----- | --------------------------------------------------- |
-| 1–2   | Study PrimeKG structure and ToolUniverse tooling    |
-| 3–6   | Graph building and metadata enrichment              |
-| 7–10  | Tool integration and script wrapping                |
-| 11–14 | Build multi-hop agent (e.g., Drug → Gene → Disease) |
-| 15–16 | Evaluation + Presentation prep                      |
-
----
-
-## 👥 Team Suitability
-
-- Ideal for 2–3 students
-- Background in Biomedical AI, Knowledge Graphs, or NLP
-- Python, Neo4j, NetworkX, API integration experience preferred
-
----
-
-## ⚠️ Challenges
-
-- 📦 **Tool Wrapping**: Over 200 tools in ToolUniverse—requires selective integration
-- 🔁 **Multi-Hop Reasoning**: Path explosion and scalability must be optimized
-- 🧠 **LLM Interface**: Requires careful management of prompt context and memory
-
----
-
-## 📂 PrimeKG File Documentation
-
-### 1. `kg.csv` — Core KG File
-
-| Column               | Meaning                                                |
-| -------------------- | ------------------------------------------------------ |
-| `relation`           | Type of relation (e.g., drug_disease)                 |
-| `display_relation`   | Abbreviated relation name (e.g., ppi)                  |
-| `x_id`, `x_type`     | Source node ID and type (e.g., drug, gene/protein)     |
-| `x_name`, `x_source` | Name and origin of the node (e.g., TP53, NCBI)         |
-| `y_id`, `y_type`     | Target node ID and type                                |
-| `y_name`, `y_source` | Name and origin of the target                          |
-
-### 2. `nodes.csv` — Node Metadata
-
-| Column        | Meaning                        |
-| ------------- | ------------------------------ |
-| `node_index`  | Graph index                    |
-| `node_id`     | Identifier (NCBI, MONDO, etc.) |
-| `node_type`   | Type of entity                 |
-| `node_name`   | Display label                  |
-| `node_source` | Origin database                |
-
-### 3. `edges.csv` — Simplified Edge List
-
-| Column               | Meaning       |
-| -------------------- | ------------- |
-| `relation`           | Relation type |
-| `x_index`, `y_index` | Node indices  |
-
-### 4. `disease_features.csv` — Disease Metadata
-
-| Field                 | Description                            |
-| --------------------- | -------------------------------------- |
-| `mondo_name`          | Name of disease (from MONDO)           |
-| `mondo_definition`    | Official MONDO definition              |
-| `umls_description`    | Unified Medical Language System desc.  |
-| `orphanet_definition` | Rare disease summary                   |
-| `mayo_symptoms`, etc. | Clinical data scraped from Mayo Clinic |
-
-### 5. `drug_features.csv` — Drug Metadata
-
-| Field                 | Description                            |
-| --------------------- | -------------------------------------- |
-| `description`         | Summary of the drug                    |
-| `indication`          | What it treats                         |
-| `mechanism_of_action` | How it works                           |
-| `pharmacodynamics`    | Effects on body                        |
-| `category`, `atc_*`   | Drug classification (e.g., ATC system) |
-
-### Other Files
-
-| File                               | Purpose                                           |
-| ---------------------------------- | ------------------------------------------------- |
-| `kg_raw.csv`, `kg_giant.csv`       | Variants of the full graph without node indexing  |
-| `kg_grouped_diseases.csv`          | Clustered disease groups based on name similarity |
-| `kg_grouped_diseases_bert_map.csv` | BERT-embedding clusters for disease sets          |
-
----
-
-## 🔗 Useful Links
-
-- 📘 [PrimeKG GitHub](https://github.com/mims-harvard/PrimeKG)
-- 🧪 [ToolUniverse](https://github.com/mims-harvard/ToolUniverse)
+**P.S.** You can use the original TxAgent repository at https://github.com/mims-harvard/TxAgent and PrimeKG documentation at https://www.nature.com/articles/s41597-023-01960-3 to understand the foundational components and knowledge graph structure that this research project builds upon.
