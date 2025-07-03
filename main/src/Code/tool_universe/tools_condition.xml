@@ -29,6 +29,14 @@ test_tool_FDA_get_calibration_instructions_by_drug_name.py
 test_tool_FDA_get_disposal_info_by_drug_name.py
 test_tool_FDA_get_drug_names_by_food_safety_warnings.py
 test_tool_FDA_get_drug_name_by_environmental_warning.py
+---------
+----------
+test_tool_FDA_get_dear_health_care_provider_letter_info_by_drug_name.py
+ FDA_retrieve_drug_name_by_device_use
+ FDA_retrieve_device_use_by_drug_name
+FDA_get_drug_names_by_residue_warning
+FDA_get_residue_warning_by_drug_name
+ 
 
 
 
@@ -368,24 +376,15 @@ FDA_get_drug_names_by_geriatric_use
 
 
 
-
-
-
-
-
-
-
-
-
-=== All Available Tools ===
-
-
+-------------------------
+---------------------------
+--first 10
 
 FDA_get_geriatric_use_info_by_drug_name
   ➤ FDA_get_geriatric_use_info_by_drug_name: Retrieve information about geriatric use based on the drug name.
 
-FDA_get_dear_health_care_provider_letter_info_by_drug_name
-  ➤ FDA_get_dear_health_care_provider_letter_info_by_drug_name: Fetch information about dear health care provider letters for a specific drug. The letters are sent by drug manufacturers to provide new or updated information about the drug.
+(not working) FDA_get_dear_health_care_provider_letter_info_by_drug_name
+  ➤ FDA_get_dear_health_care_provider_letter_info_by_drug_name: Fetch information about dear health care provider letters for a specific drug. The letters are sent by drug manufacturers to provide new or updated information about the drug.
 
 FDA_get_drug_names_by_dear_health_care_provider_letter_info
   ➤ FDA_get_drug_names_by_dear_health_care_provider_letter_info: Fetch drug names based on information about dear health care provider letters. The letters are sent by drug manufacturers to provide new or updated information about the drug.
@@ -393,10 +392,10 @@ FDA_get_drug_names_by_dear_health_care_provider_letter_info
 FDA_get_drug_names_by_health_claim
   ➤ FDA_get_drug_names_by_health_claim: Retrieve drug names based on specific health claims.
 
-FDA_get_health_claims_by_drug_name
+ FDA_get_health_claims_by_drug_name
   ➤ FDA_get_health_claims_by_drug_name: Retrieve health claims associated with a specific drug name.
 
-FDA_get_drug_name_by_document_id
+ FDA_get_drug_name_by_document_id
   ➤ FDA_get_drug_name_by_document_id: Retrieve the drug name based on the document ID.
 
 FDA_get_document_id_by_drug_name
@@ -410,6 +409,8 @@ FDA_get_inactive_ingredient_info_by_drug_name
 
 FDA_get_drug_names_by_indication
   ➤ FDA_get_drug_names_by_indication: Retrieve a list of drug names based on a specific indication or usage.
+------------------------------------------------
+--second 10
 
 FDA_get_indications_by_drug_name
   ➤ FDA_get_indications_by_drug_name: Retrieve indications and usage information based on a specific drug name.
@@ -429,10 +430,10 @@ FDA_get_drug_names_by_instructions_for_use
 FDA_get_instructions_for_use_by_drug_name
   ➤ FDA_get_instructions_for_use_by_drug_name: Retrieve instructions for use information based on the drug name.
 
-FDA_retrieve_drug_name_by_device_use
+(not working) FDA_retrieve_drug_name_by_device_use
   ➤ FDA_retrieve_drug_name_by_device_use: Retrieve the drug name based on the intended use of the device.
 
-FDA_retrieve_device_use_by_drug_name
+(not working) FDA_retrieve_device_use_by_drug_name
   ➤ FDA_retrieve_device_use_by_drug_name: Retrieve the intended use of the device based on the drug name.
 
 FDA_get_drug_names_by_child_safety_info
@@ -440,6 +441,8 @@ FDA_get_drug_names_by_child_safety_info
 
 FDA_get_child_safety_info_by_drug_name
   ➤ FDA_get_child_safety_info_by_drug_name: Retrieve child safety information for a specific drug based on its name.
+-------------------------
+--third 10
 
 FDA_get_drug_name_by_labor_and_delivery_info
   ➤ FDA_get_drug_name_by_labor_and_delivery_info: Retrieve the drug name based on information about the drug’s use during labor or delivery.
@@ -471,6 +474,8 @@ FDA_get_drug_names_by_nonclinical_toxicology_info
 FDA_get_nonclinical_toxicology_info_by_drug_name
   ➤ FDA_get_nonclinical_toxicology_info_by_drug_name: Retrieve nonclinical toxicology information based on drug names.
 
+-----------------------------------------------
+--fourth 10
 FDA_get_drug_names_by_nonteratogenic_effects
   ➤ FDA_get_drug_names_by_nonteratogenic_effects: Retrieve drug names based on the presence of nonteratogenic effects information.
 
@@ -501,6 +506,9 @@ FDA_get_drug_name_by_principal_display_panel
 FDA_get_principal_display_panel_by_drug_name
   ➤ FDA_get_principal_display_panel_by_drug_name: Retrieve the content of the principal display panel of the product package based on the drug name.
 
+
+--fifth 10
+---------------------------
 FDA_retrieve_drug_names_by_patient_medication_info
   ➤ FDA_retrieve_drug_names_by_patient_medication_info: Retrieve drug names based on patient medication information, which is about safe use of the drug.
 
@@ -530,6 +538,8 @@ FDA_get_drug_names_by_pharmacokinetics
 
 FDA_get_pharmacokinetics_by_drug_name
   ➤ FDA_get_pharmacokinetics_by_drug_name: Retrieve pharmacokinetics information (e.g. absorption, distribution, elimination, metabolism, drug interactions, and specific patient populations) for a specific drug based on its name.
+-----------
+--sixth 10
 
 FDA_get_drug_name_by_precautions
   ➤ FDA_get_drug_name_by_precautions: Retrieve the drug name based on the precautions field information.
@@ -561,10 +571,12 @@ FDA_get_drug_name_by_reference
 FDA_get_reference_info_by_drug_name
   ➤ FDA_get_reference_info_by_drug_name: Retrieve reference information based on the drug name provided.
 
-FDA_get_drug_names_by_residue_warning
+---------
+---seventh 10
+(not working) FDA_get_drug_names_by_residue_warning
   ➤ FDA_get_drug_names_by_residue_warning: Retrieve drug names based on the presence of residue warnings.
 
-FDA_get_residue_warning_by_drug_name
+(not working) FDA_get_residue_warning_by_drug_name
   ➤ FDA_get_residue_warning_by_drug_name: Retrieve the residue warning based on drug name.
 
 FDA_get_drug_names_by_risk
@@ -590,7 +602,8 @@ FDA_get_drug_name_by_set_id
 
 FDA_get_drug_names_by_spl_indexing_data_elements
   ➤ FDA_get_drug_names_by_spl_indexing_data_elements: Retrieve drug names based on Structured Product Labeling (SPL) indexing data elements.
-
+--------------
+---eighth 10
 FDA_get_spl_indexing_data_elements_by_drug_name
   ➤ FDA_get_spl_indexing_data_elements_by_drug_name: Retrieve Structured Product Labeling (SPL) indexing data elements based on drug names.
 
@@ -620,6 +633,9 @@ FDA_get_drug_name_by_stop_use_info
 
 FDA_get_stop_use_info_by_drug_name
   ➤ FDA_get_stop_use_info_by_drug_name: Retrieve stop use information based on the drug name provided.
+-----
+ninth 10
+
 
 FDA_get_drug_name_by_storage_and_handling_info
   ➤ FDA_get_drug_name_by_storage_and_handling_info: Retrieve the drug name based on storage and handling information.
@@ -650,6 +666,7 @@ FDA_get_user_safety_warning_by_drug_names
 
 FDA_get_drug_names_by_user_safety_warning
   ➤ FDA_get_drug_names_by_user_safety_warning: Retrieve drug names that have specific user safety warnings.
+---tenth 10
 
 FDA_get_drug_name_by_warnings
   ➤ FDA_get_drug_name_by_warnings: Retrieve the drug names based on specific warning information.
@@ -677,7 +694,10 @@ FDA_get_purpose_info_by_drug_name
 
 FDA_get_drug_generic_name
   ➤ FDA_get_drug_generic_name: Get the drug’s generic name based on the drug's generic or brand name.
+---
+special tools
 
+-------
 Finish
   ➤ Finish: Indicate the end of multi-step reasoning.
 
@@ -695,3 +715,11 @@ get_phenotype_by_HPO_ID
 
 get_HPO_ID_by_phenotype
   ➤ get_HPO_ID_by_phenotype: Retrieve the HPO ID of a phenotype or symptom.
+
+=== All Available Tools ===
+
+
+
+
+
+
