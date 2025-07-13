@@ -178,7 +178,7 @@ Top drugs include: Estradiol valerate, Iopanoic acid, Guaifenesin, Mometasone fu
 
 Examples: ADCY2, ADCYAP1R1, PARP1, ADRB2, ALDH2
 
-![Genes for asthma](image.png)
+![Genes for asthma](genes_asthma.png)
 
 #### 🧠 Explanation:
 
@@ -196,7 +196,7 @@ Examples: ADCY2, ADCYAP1R1, PARP1, ADRB2, ALDH2
 #### ✅ Exact Answer:
 
 **TP53 → PARP1 → asthma** (3 steps)
-![shortest route](image.png)
+![shortest route](shortestpath.png)
 #### 🧠 Explanation:
 
 * Uses graph traversal to determine interaction chains.
@@ -214,7 +214,7 @@ Examples: ADCY2, ADCYAP1R1, PARP1, ADRB2, ALDH2
 
 ZDHHC5, TUBB, NBR2, FARSB, CFAP36, S100A14, REXO1, GATD1
 
-![BERT-similar diseases to asthma](image.png)
+![BERT-similar diseases to asthma](bert_similar.png)
 
 #### 🧠 Explanation:
 
