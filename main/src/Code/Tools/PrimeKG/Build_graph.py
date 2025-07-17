@@ -173,6 +173,7 @@ print(f"  - Average Degree: {sum(degrees) / len(degrees):.2f}")
 
 import plotly.graph_objects as go
 import networkx as nx
+import pandas as pd
 
 def draw_neighbors_interactive(entity_name):
     # Map names to node IDs
@@ -188,10 +189,30 @@ def draw_neighbors_interactive(entity_name):
     sub_nodes = [node] + neighbors
     subgraph = G.subgraph(sub_nodes)
 
-    # Spring layout
-    pos = nx.spring_layout(subgraph, seed=42)
+    # === Save Combined Node-Edge Info to CSV ===
+    records = []
+    for u, v in subgraph.edges():
+        source_data = G.nodes[u]
+        target_data = G.nodes[v]
+        edge_data = G.edges[u, v]
 
-    # Node coordinates and hover text
+        records.append({
+            "source_id": u,
+            "source_name": source_data.get("node_name", ""),
+            "source_type": source_data.get("node_type", ""),
+            "target_id": v,
+            "target_name": target_data.get("node_name", ""),
+            "target_type": target_data.get("node_type", ""),
+            "relation": edge_data.get("relation", "")
+        })
+
+    df = pd.DataFrame(records)
+    safe_name = entity_name.lower().replace(" ", "_")
+    filename = f"{safe_name}_neighbors.csv"
+    df.to_csv(filename, index=False)
+
+    # === Visualization ===
+    pos = nx.spring_layout(subgraph, seed=42)
     node_x, node_y, hovertext = [], [], []
     for n in subgraph.nodes():
         x, y = pos[n]
@@ -200,7 +221,6 @@ def draw_neighbors_interactive(entity_name):
         node_data = G.nodes[n]
         hovertext.append(f"{node_data['node_name']}<br>({node_data['node_type']})")
 
-    # Edges
     edge_x, edge_y = [], []
     for u, v in subgraph.edges():
         x0, y0 = pos[u]
@@ -248,7 +268,7 @@ def draw_neighbors_interactive(entity_name):
     fig.show()
 
 # ✅ Try it:
-draw_neighbors_interactive("asthma")
+draw_neighbors_interactive("hyperekplexia")
 
 
 #%%
@@ -447,7 +467,7 @@ with open("primekg_graph.pkl", "rb") as f:
     G = pickle.load(f)
 
 print(f"✅ Graph loaded with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges")
-
+#%%
 # Try Graphviz layout if possible (for better large-scale layout)
 try:
     from networkx.drawing.nx_agraph import graphviz_layout
