@@ -28,3 +28,10 @@ venv.bak/
 
 # Environment
 .env
+
+# PrimeKG downloaded data
+src/Code/data/
+# Log and cache files
+*.log
+logs/
+
