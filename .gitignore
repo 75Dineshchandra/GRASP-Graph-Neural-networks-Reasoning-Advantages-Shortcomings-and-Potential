@@ -29,9 +29,14 @@ venv.bak/
 # Environment
 .env
 
-# PrimeKG downloaded data
+# Ignore all data files
 src/Code/data/
-# Log and cache files
-*.log
+
+# Ignore all logs
 logs/
+*.log
+
+# Ignore output files (pickles, CSVs, images, etc.)
+outputs/
+
 
