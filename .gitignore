@@ -37,6 +37,7 @@ logs/
 *.log
 
 # Ignore output files (pickles, CSVs, images, etc.)
-outputs/
+# Ignore dynamically generated outputs
+main/src/Code/Tools/PrimeKG/outputs/
 
 
