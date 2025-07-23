@@ -1,12 +1,27 @@
 #%%
 #%%
-import pandas as pd
 import os
+import pandas as pd
 
-# Change working directory to where your files are
-os.chdir("/home/ubuntu/primekg")
+#  Resolve path to this script’s folder
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# List of all your CSV files and labels
+#  Go up two levels, then to data/primekg
+DATA_PATH = os.path.join(SCRIPT_DIR, "..", "..", "data", "primekg")
+
+# Ensure outputs/ folder exists
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "outputs")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+
+#  Confirm it's correct
+print("🔧 Data path resolved to:", os.path.abspath(DATA_PATH))
+try:
+    print("📂 Files in data path:", os.listdir(DATA_PATH))
+except Exception as e:
+    print("❌ Could not list data path:", e)
+
+# Files and Labels
 files = {
     "README.txt": "📘 README",
     "nodes.csv": "🧠 Nodes",
@@ -21,25 +36,29 @@ files = {
     "disease_features.csv": "🦠 Disease Features"
 }
 
-# Load and preview each file
+# Load and preview files
 for file, label in files.items():
+    full_path = os.path.join(DATA_PATH, file)
     print(f"\n--- {label} ({file}) ---")
     try:
         if file.endswith(".txt"):
-            with open(file, "r") as f:
-                print(f.read().strip()[:1000])  # Show first 1000 chars
+            with open(full_path, "r") as f:
+                print(f.read().strip()[:1000])
         else:
-            df = pd.read_csv(file)
+            df = pd.read_csv(full_path)
             print(df.head())
     except Exception as e:
         print(f"❌ Failed to load {file}: {e}")
+
+
+
 
 # %%
 import networkx as nx
 
 # Load main files again for clarity
-nodes_df = pd.read_csv("nodes.csv")
-kg_df = pd.read_csv("kg.csv", low_memory=False)
+nodes_df = pd.read_csv(os.path.join(DATA_PATH, "nodes.csv"))
+kg_df = pd.read_csv(os.path.join(DATA_PATH, "kg.csv"), low_memory=False)
 
 # Initialize a directed graph
 G = nx.DiGraph()
@@ -67,8 +86,8 @@ print(f"✅ Graph built with {G.number_of_nodes()} nodes and {G.number_of_edges(
 
 #%%
 # Load feature files
-drug_df = pd.read_csv("drug_features.csv")
-disease_df = pd.read_csv("disease_features.csv")
+drug_df = pd.read_csv(os.path.join(DATA_PATH, "drug_features.csv"))
+disease_df = pd.read_csv(os.path.join(DATA_PATH, "disease_features.csv"))
 
 # Add features to drug nodes
 for _, row in drug_df.iterrows():
@@ -88,8 +107,8 @@ print("✅ Drug and disease features enriched into graph.")
 
 #%%
 # Optional: Add BERT similarity edges between grouped diseases
-bert_map_df = pd.read_csv("kg_grouped_diseases_bert_map.csv")
-print("✅ BERT disease groupings loaded.")
+bert_map_df = pd.read_csv(os.path.join(DATA_PATH, "kg_grouped_diseases_bert_map.csv"))
+print("BERT disease groupings loaded.")
 
 bert_edge_count = 0
 for _, row in bert_map_df.iterrows():
@@ -101,7 +120,7 @@ for _, row in bert_map_df.iterrows():
             G.add_edge(int(disease_id), int(gid), relation="bert_group", display_relation="BERT similarity")
             bert_edge_count += 1
 
-print(f"✅ BERT edges added: {bert_edge_count:,}")
+print(f"BERT edges added: {bert_edge_count:,}")
 
 #%%
 from collections import Counter
@@ -155,7 +174,7 @@ print(f"  - To disease: {tgt_name}")
 try:
     path = nx.shortest_path(G, source=src, target=tgt)
     readable_path = [G.nodes[n].get("node_name", str(n)) for n in path]
-    print(f"  ✅ Path found ({len(path)} steps):")
+    print(f"   Path found ({len(path)} steps):")
     print("    → " + " → ".join(readable_path))
 except nx.NetworkXNoPath:
     print("  ❌ No path found between them.")
@@ -208,8 +227,9 @@ def draw_neighbors_interactive(entity_name):
 
     df = pd.DataFrame(records)
     safe_name = entity_name.lower().replace(" ", "_")
-    filename = f"{safe_name}_neighbors.csv"
+    filename = os.path.join(OUTPUT_DIR, f"{safe_name}_neighbors.csv")
     df.to_csv(filename, index=False)
+
 
     # === Visualization ===
     pos = nx.spring_layout(subgraph, seed=42)
@@ -267,7 +287,7 @@ def draw_neighbors_interactive(entity_name):
 
     fig.show()
 
-# ✅ Try it:
+#  Try it:
 draw_neighbors_interactive("hyperekplexia")
 
 
@@ -380,7 +400,7 @@ def find_drugs_sharing_side_effects(drug_name):
     return list(shared)
 #%%
 # --- Link asthma to BERT-similar diseases ---
-bert_map_df = pd.read_csv("kg_grouped_diseases_bert_map.csv")
+bert_map_df = pd.read_csv(os.path.join(DATA_PATH, "kg_grouped_diseases_bert_map.csv"))
 asthma_node = get_node("asthma")
 
 asthma_cluster = bert_map_df[
@@ -397,7 +417,7 @@ if asthma_node is not None and not asthma_cluster.empty:
                        display_relation="BERT cluster approx")
             bert_cluster_edge_count += 1
 
-print(f"✅ Linked 'asthma' to {bert_cluster_edge_count} BERT-clustered diseases.\n")
+print(f" Linked 'asthma' to {bert_cluster_edge_count} BERT-clustered diseases.\n")
 
 
 #%%
@@ -448,11 +468,11 @@ else:
 # Save the current state of the graph to a file
 import pickle
 
-graph_path = "primekg_graph.pkl"
+graph_path = os.path.join(OUTPUT_DIR, "primekg_graph.pkl")
 with open(graph_path, "wb") as f:
     pickle.dump(G, f)
 
-print(f"✅ Graph saved to: {graph_path}")
+print(f" Graph saved to: {graph_path}")
 
 #%%
 #Full Graph Visualization
@@ -463,10 +483,10 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Load the saved graph
-with open("primekg_graph.pkl", "rb") as f:
+with open(os.path.join(OUTPUT_DIR, "primekg_graph.pkl"), "rb") as f:
     G = pickle.load(f)
 
-print(f"✅ Graph loaded with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges")
+print(f" Graph loaded with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges")
 #%%
 # Try Graphviz layout if possible (for better large-scale layout)
 try:
@@ -494,7 +514,7 @@ plt.title("Full PrimeKG Graph", fontsize=36)
 plt.tight_layout()
 plt.savefig("primekg_full_graph.png", dpi=300)
 plt.close()
-print("✅ Full graph image saved to: primekg_full_graph.png")
+print(" Full graph image saved to: primekg_full_graph.png")
 
 # %%
 
