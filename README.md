@@ -66,13 +66,13 @@ pip install -r requirements.txt
 src/
 ├── Code/
 │   ├── Datadownloader/                 # PrimeKG downloader
-│   ├── Tools/
-│   │   ├── openfda/                    # API response test scripts + guides
-│   │   └── tool_universe/             # Modular reusable FDA tools
-│   └── PrimeKG/                        # Graph builder, queries, notebooks
-├── data/                               # PrimeKG .csv files
-├── logs/                               # Logs from downloads or analysis
-├── reports/                            # Reports and summaries
+│   ├── Tools/                        # Reports and summaries
+=======
+│       ├── openfda/                    # API response test scripts + guides
+│       └── tool_universe/             # Modular reusable FDA tools
+│       └── PrimeKG/                        # Graph builder, queries, notebooks
+├── logs/                               # Logs from PrimeKG downloader
+├── reports/                            # Analysis or results (optional)
 ```
 
 ---
