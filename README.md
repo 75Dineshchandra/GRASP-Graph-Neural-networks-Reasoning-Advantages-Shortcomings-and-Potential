@@ -97,12 +97,13 @@ Each modular tool is documented with a corresponding Markdown guide to help you 
 
 ### 🛠 ToolUniverse Tools (`src/Code/Tools/tool_universe/`)
 
-| Tool Name             | Markdown Guide                                                                 |
-|-----------------------|---------------------------------------------------------------------------------|
+| Tool Name            | Markdown Guide                                                                                      |
+|----------------------|-----------------------------------------------------------------------------------------------------|
 | Adverse Reactions     | [test_tool_Adverse_Reactions.md](src/Code/Tools/tool_universe/test/test_tool_Adverse_Reactions.md) |
 | Dosage and Storage    | [test_tool_Dosage_and_Storage.md](src/Code/Tools/tool_universe/test/test_tool_Dosage_and_Storage.md) |
-| Drug Ingredients      | [test_tool_drug_ingredients.md](src/Code/Tools/tool_universe/test/test_tool_drug_ingredients.md) |
-| Warnings              | [test_tool_Warnings.md](src/Code/Tools/tool_universe/test/test_tool_Warnings.md) |
+| Drug Ingredients      | [test_tool_Drug_Ingredients.md](src/Code/Tools/tool_universe/test/test_tool_Drug_Ingredients.md)    |
+| Warnings              | [test_tool_Warnings.md](src/Code/Tools/tool_universe/test/test_tool_Warnings.md)                  |
+
                                                         |
 
 ### 🌐 openFDA API Test Scripts (`src/Code/Tools/openfda/test/`)
