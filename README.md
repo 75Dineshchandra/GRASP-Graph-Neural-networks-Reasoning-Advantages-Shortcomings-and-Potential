@@ -1,33 +1,43 @@
 # **Knowledge Graph-Enhanced Therapeutic Agent (KgTxAgent)**
 
 ## **Overview**
-This research project develops an enhanced therapeutic reasoning agent that integrates PrimeKG (Precision Medicine Knowledge Graph) with the TxAgent framework for improved biomedical decision-making. The project combines structured knowledge representation with large language model capabilities to create a more comprehensive and contextually-aware therapeutic reasoning system. The enhanced agent leverages the rich biomedical relationships encoded in PrimeKG to provide evidence-based therapeutic recommendations across multiple biological scales.
+This research project develops an enhanced therapeutic reasoning agent that integrates **PrimeKG** (Precision Medicine Knowledge Graph) with the **TxAgent** framework for improved biomedical decision-making. The system combines structured biomedical knowledge with natural language understanding to provide evidence-based therapeutic recommendations across multiple biological scales.
 
 ## **Key Features**
 
-* **Knowledge Graph Integration Pipeline:** Incorporates PrimeKG as the core knowledge foundation, utilizing its 17,080 diseases and 4,050,249 biomedical relationships to enhance therapeutic reasoning capabilities beyond traditional text-based approaches.
-
-* **Multi-Scale Biomedical Reasoning:** Integrates relationships spanning molecular, cellular, tissue, and organ levels from PrimeKG to provide comprehensive therapeutic analysis that considers the full spectrum of biological interactions and disease mechanisms.
-
-* **Enhanced Entity Linking System:** Implements advanced biomedical entity recognition and linking capabilities that connect textual mentions to PrimeKG entities, enabling more accurate knowledge retrieval and contextual understanding for therapeutic queries.
-
-* **Graph-Aware Decision Making:** Utilizes sophisticated graph traversal algorithms and multi-hop reasoning across PrimeKG's structure to identify relevant therapeutic pathways, drug-disease associations, and potential contraindications for evidence-based recommendations.
-
-* **Precision Medicine Integration:** Leverages PrimeKG's comprehensive disease coverage and drug association data to support personalized treatment recommendations, drug repurposing opportunities, and precision medicine applications.
+- **Knowledge Graph Integration Pipeline**: Leverages PrimeKG’s 17,080 diseases and 4,050,249 relationships.
+- **Multi-Scale Biomedical Reasoning**: Covers molecular to organ-level interactions.
+- **Enhanced Entity Linking System**: Maps clinical mentions to PrimeKG entities.
+- **Graph-Aware Decision Making**: Multi-hop traversal and path reasoning for therapy suggestions.
+- **Precision Medicine Ready**: Supports drug repurposing and patient-specific treatment strategies.
 
 ## **Rich Dataset**
-PrimeKG (Precision Medicine Knowledge Graph) serves as the primary knowledge source, integrating data from 20 high-quality biomedical resources including disease ontologies (MONDO, HPO), drug databases (DrugBank, SIDER), protein interaction networks (STRING, BioGRID), and pathway databases (KEGG, Reactome). The knowledge graph contains 17,080 diseases with 4,050,249 relationships across ten major biological scales. Additionally, the project utilizes the original TxAgent framework's biomedical reasoning capabilities and integrates clinical case studies for validation and performance evaluation.
+PrimeKG is sourced from 20+ biomedical datasets such as MONDO, HPO, DrugBank, SIDER, STRING, KEGG, and Reactome. The dataset captures over 4M relationships and integrates disease, drug, and gene-level interactions. Additional validation is supported by the original TxAgent clinical reasoning capabilities.
 
 ## **Model Architectures**
-This research project enhances the TxAgent architecture with knowledge graph-aware components. The core system utilizes transformer-based models for natural language understanding while incorporating graph neural networks for processing PrimeKG's structure and relationships. The enhanced architecture includes a Knowledge Graph Encoder that processes biomedical entities and their relationships, an Entity Linking Module for accurate biomedical entity recognition, and a Graph-Aware Reasoning Engine that combines knowledge graph embeddings with language model representations. The Multi-Modal Fusion Layer integrates structured knowledge from PrimeKG with unstructured clinical text to provide comprehensive therapeutic understanding and evidence-based decision making.
+The system enhances the TxAgent framework with:
+
+- **Transformer Models** for language understanding.
+- **Graph Neural Networks (GNNs)** for structured reasoning over PrimeKG.
+- **Knowledge Graph Encoder**
+- **Entity Linking Module**
+- **Graph-Aware Reasoning Engine**
+- **Multi-Modal Fusion Layer**
+
+These modules allow seamless fusion of textual and graph-based biomedical knowledge.
 
 ## **Knowledge Graph Integration**
-The project implements sophisticated knowledge graph querying and reasoning mechanisms to leverage PrimeKG's comprehensive biomedical knowledge. The system performs entity linking to map clinical mentions to PrimeKG entities, executes multi-hop graph traversals to identify relevant therapeutic pathways, and utilizes graph-guided generation to ensure recommendations are grounded in established biomedical knowledge. The integration enables the agent to access detailed drug-disease associations, biological pathway information, and mechanism-based therapeutic insights that significantly enhance the accuracy and reliability of therapeutic recommendations compared to traditional text-only approaches.
+The pipeline includes:
 
-**P.S.** You can use the original TxAgent repository at https://github.com/mims-harvard/TxAgent and PrimeKG documentation at https://www.nature.com/articles/s41597-023-01960-3 to understand the foundational components and knowledge graph structure that this research project builds upon.
+- Entity resolution and linking to PrimeKG nodes.
+- Multi-hop query traversal for drug-disease-pathway chains.
+- Graph-guided generation and explanation tracing.
 
+> 📎 Repositories and references:
+> - [TxAgent GitHub](https://github.com/mims-harvard/TxAgent)
+> - [PrimeKG Paper](https://www.nature.com/articles/s41597-023-01960-3)
 
-
+---
 
 ## 🚀 Getting Started
 
@@ -36,23 +46,15 @@ The project implements sophisticated knowledge graph querying and reasoning mech
 ```bash
 git clone https://github.com/75Dineshchandra/KgTxAgent.git
 cd KgTxAgent
-
-
-This repository provides a clean, modular framework to work with:
-
-- **PrimeKG** (Precision Medicine Knowledge Graph) — for disease-drug-gene relationships
-- **ToolUniverse** — plug-and-play FDA tools (structured response)
-- **openFDA API Explorers** — raw API response demonstrations for real-world queries
+```
 
 ---
 
 ## 📦 Installation
 
-Make sure you have Python 3.8+ installed, then:
+Ensure you have Python 3.8+ installed:
 
 ```bash
-git clone https://github.com/75Dineshchandra/KgTxAgent.git
-cd KgTxAgent
 pip install -r requirements.txt
 ```
 
@@ -68,77 +70,81 @@ src/
 │   │   ├── openfda/                    # API response test scripts + guides
 │   │   └── tool_universe/             # Modular reusable FDA tools
 │   └── PrimeKG/                        # Graph builder, queries, notebooks
-├── logs/                               # Logs from PrimeKG downloader
-├── reports/                            # Analysis or results (optional)
+├── data/                               # PrimeKG .csv files
+├── logs/                               # Logs from downloads or analysis
+├── reports/                            # Reports and summaries
 ```
 
 ---
 
 ## 🧬 PrimeKG Downloader
 
-Downloads and prepares the full PrimeKG dataset.
+To download and prepare PrimeKG:
 
 ```bash
 python src/Code/Datadownloader/primekg_downloader.py
 ```
 
 Outputs:
-- `.tab/.csv` files in: `src/Code/data/primekg/`
-- Logs in: `logs/primekg_download.log`
+- CSV/TAB files in: `src/Code/data/primekg/`
+- Log file: `logs/primekg_download.log`
 
 ---
 
-## 🔧 Modular Tools — ToolUniverse
+## 📚 Tool Documentation
 
-Reusable tools for extracting structured data from openFDA (modular, embeddable).
+Each modular tool is documented with a corresponding Markdown guide to help you understand inputs, outputs, and usage. Browse the links below for full documentation.
 
-| Tool | Script | Guide |
-|------|--------|-------|
-| Adverse Reactions | `test_tool_Adverse_Reactions.py` | `test_tool_Adverse_Reactions.md` |
-| Dosage Info | `test_tool_Dosage_and_Storage.py` | `test_tool_Dosage_and_Storage.md` |
-| Drug Ingredients | `test_tool_drug_ingredients.py` | `test_tool_drug_ingredients.md` |
-| Brand/Generic Name | `test_tool_FDA_get_brand_name_generic_name.py` | — |
-| Clinical Pharmacology | `test_tool_FDA_get_clinical_pharmacology_by_drug_name.py` | — |
+### 🛠 ToolUniverse Tools (`src/Code/Tools/tool_universe/`)
 
-> 🔍 See the full list in `tools_description.md`
+| Tool Name             | Markdown Guide                                                                 |
+|-----------------------|---------------------------------------------------------------------------------|
+| Adverse Reactions     | [test_tool_Adverse_Reactions.md](src/Code/Tools/tool_universe/test/test_tool_Adverse_Reactions.md) |
+| Dosage and Storage    | [test_tool_Dosage_and_Storage.md](src/Code/Tools/tool_universe/test/test_tool_Dosage_and_Storage.md) |
+| Drug Ingredients      | [test_tool_drug_ingredients.md](src/Code/Tools/tool_universe/test/test_tool_drug_ingredients.md) |
+| Warnings              | [test_tool_Warnings.md](src/Code/Tools/tool_universe/test/test_tool_Warnings.md) |
+                                                        |
 
-These tools return structured JSON responses and can be used programmatically in LLMs or automation.
+### 🌐 openFDA API Test Scripts (`src/Code/Tools/openfda/test/`)
+
+| Test Script              | Markdown Guide                                                                 |
+|--------------------------|---------------------------------------------------------------------------------|
+| Device Events            | [device_events_test_guide.md](src/Code/Tools/openfda/test/device_events_test_guide.md) |
+| Drug Adverse Events      | [drug_adverse_events_test_guide.md](src/Code/Tools/openfda/test/drug_adverse_events_test_guide.md) |
+| Drug Labeling            | [drug_labeling_test_guide.md](src/Code/Tools/openfda/test/drug_labeling_test_guide.md) |
+| Drug NDC Info            | [drug_ndc_test_guide.md](src/Code/Tools/openfda/test/drug_ndc_test_guide.md) |
+| Drug Recalls             | [drug_recalls_test_guide.md](src/Code/Tools/openfda/test/drug_recalls_test_guide.md) |
+| Food Recalls             | [food_recalls_test_guide.md](src/Code/Tools/openfda/test/food_recalls_test_guide.md) |
+
+> 🔍 See the full list in: [tools_description.md](src/Code/Tools/tool_universe/tools_description.md)
+---
+
+## 📘 PrimeKG Scripts & Visualizations
+
+These scripts and guides help you build, explore, and query the PrimeKG biomedical graph using Python and Jupyter — no graph database required.
+
+| File / Script                             | Description                                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| [`Build_graph.py`](src/Code/PrimeKG/Build_graph.py) | 📦 Loads PrimeKG CSVs, builds a NetworkX graph, enriches with drug/disease features, adds BERT similarity links, and visualizes subgraphs interactively. Saves `.pkl` and `.png`. |
+| [`build_graph.md`](src/Code/PrimeKG/build_graph.md) | 📘 Detailed markdown guide covering graph construction, feature enrichment, size stats, node type distribution, BERT-based similarity, and visual query examples. |
+| [`KG_Query.ipynb`](src/Code/PrimeKG/KG_Query.ipynb) | 🔍 Interactive notebook to run entity-level queries like gene–disease–drug paths, similarity lookups, and multi-hop graph traversal using NetworkX. |
+| [`PrimeKG_Full_Query_Detailed.md`](src/Code/PrimeKG/PrimeKG_Full_Query_Detailed.md) | 📖 Query blueprint with detailed disease, drug, and gene examples — shows how to match entities from features CSVs, extract `node_index`, and query relations using pandas + NetworkX. |
+
+> 🗃️ All CSV data lives in `src/Code/data/primekg/`.  
+> 📊 Graph exports and neighborhood subgraphs are saved in `outputs/`.  
+> 🖼️ Visualizations include `primekg_full_graph.png`, drug–gene graphs, BERT clusters, and shortest path diagrams.
+
+---
+## ✅ What's Included
+
+- ✅ PrimeKG dataset + querying tools  
+- ✅ Knowledge-graph enhanced therapeutic reasoning  
+- ✅ FDA-compliant structured toolkits  
+- ✅ Real-world openFDA pipeline testing  
+- ✅ Complete documentation for each module  
 
 ---
 
-## 🔍 API Response Explorers — openFDA Test Scripts
-
-These scripts hit the real openFDA REST API and return **full raw results** for:
-
-- Drug labeling
-- Device events
-- Food recalls
-- Drug adverse events
-
-Run them like this:
-
-```bash
-python src/Code/Tools/openfda/test/test_device_events.py
-python src/Code/Tools/openfda/test/test_drug_labeling.py
-```
-
-Each script prints actual FDA event reports or metadata. Good for:
-- Demos
-- Exploration
-- QA evaluation of raw fields
-
----
-
-## What’s Included
-
--  Safe, resumable PrimeKG downloader
--  Modular FDA tools (ToolUniverse)
--  Raw FDA response scripts (openFDA)
--  Full documentation in matching Markdown files
-- Simple install & usage
-
----
-
-- Based on [PrimeKG (Harvard)](https://github.com/mims-harvard/PrimeKG)
-- Powered by [openFDA API](https://open.fda.gov)
-
+- 📘 Based on [PrimeKG (Harvard)](https://github.com/mims-harvard/PrimeKG)  
+- 💊 Powered by [openFDA](https://open.fda.gov)  
+- 🤖 Language Reasoning via [TxAgent](https://github.com/mims-harvard/TxAgent)

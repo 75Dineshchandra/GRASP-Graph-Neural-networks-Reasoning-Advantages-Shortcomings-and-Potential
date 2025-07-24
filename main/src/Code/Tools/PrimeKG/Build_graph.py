@@ -7,7 +7,7 @@ import pandas as pd
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 #  Go up two levels, then to data/primekg
-DATA_PATH = os.path.join(SCRIPT_DIR, "..", "..", "data", "primekg")
+DATA_PATH = os.path.join(SCRIPT_DIR, "..", "..", "..", "data", "data", "primekg")
 
 # Ensure outputs/ folder exists
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "outputs")
@@ -49,9 +49,6 @@ for file, label in files.items():
             print(df.head())
     except Exception as e:
         print(f"❌ Failed to load {file}: {e}")
-
-
-
 
 # %%
 import networkx as nx
@@ -292,6 +289,7 @@ draw_neighbors_interactive("hyperekplexia")
 
 
 #%%
+
 import plotly.graph_objects as go
 import networkx as nx
 

@@ -34,7 +34,7 @@ from test.test_tool_Warnings import run_tool_demo as run_tool_3
 from test.test_tool_Dosage_and_Storage import run_tool_demo as run_tool_4
 
 # Existing OpenTargets Tools (from the provided main.py)
-from test.test_tool_OpenTargets_get_drug_withdrawn_blackbox_status_by_chemblId import run_tool_demo as run_tool_11
+#from test.test_tool_OpenTargets_get_drug_withdrawn_blackbox_status_by_chemblId import run_tool_demo as run_tool_11
 from test.test_tool_OpenTargets_search_category_counts_by_query_string import run_tool_demo as run_tool_12
 from test.test_tool_OpenTargets_get_disease_id_description_by_name import run_tool_demo as run_tool_13
 from test.test_tool_OpenTargets_get_drug_id_description_by_name import run_tool_demo as run_tool_14
@@ -96,28 +96,28 @@ from test.test_tool_FDA_get_dosage_and_storage_information_by_drug_name import r
 from test.test_tool_FDA_get_drug_names_by_abuse_info import run_tool_demo as run_tool_56
 from test.test_tool_FDA_get_abuse_info_by_drug_name import run_tool_demo as run_tool_57
 from test.test_tool_FDA_get_drug_names_by_accessories import run_tool_demo as run_tool_58
-from test.test_tool_FDA_get_accessories_info_by_drug_name import run_tool_demo as run_tool_59
+#from test.test_tool_FDA_get_accessories_info_by_drug_name import run_tool_demo as run_tool_59
 from test.test_tool_FDA_get_drug_names_by_active_ingredient import run_tool_demo as run_tool_60
 
 from test.test_tool_FDA_get_manufacturer_name_NDC_number_by_drug_name import run_tool_demo as run_tool_61
 from test.test_tool_FDA_get_drug_names_by_application_number_NDC_number import run_tool_demo as run_tool_62
 from test.test_tool_FDA_get_drug_name_by_adverse_reaction import run_tool_demo as run_tool_63
 from test.test_tool_FDA_get_adverse_reactions_by_drug_name import run_tool_demo as run_tool_64
-from test.test_tool_FDA_get_drug_names_by_alarm import run_tool_demo as run_tool_65
-from test.test_tool_FDA_get_alarms_by_drug_name import run_tool_demo as run_tool_66
+#from test.test_tool_FDA_get_drug_names_by_alarm import run_tool_demo as run_tool_65
+#from test.test_tool_FDA_get_alarms_by_drug_name import run_tool_demo as run_tool_66
 from test.test_tool_FDA_get_drug_names_by_animal_pharmacology_info import run_tool_demo as run_tool_67
-from test.test_tool_FDA_get_animal_pharmacology_info_by_drug_name import run_tool_demo as run_tool_68
+#from test.test_tool_FDA_get_animal_pharmacology_info_by_drug_name import run_tool_demo as run_tool_68
 from test.test_tool_FDA_get_drug_name_by_info_on_conditions_for_doctor_consultation import run_tool_demo as run_tool_69
 from test.test_tool_FDA_get_info_on_conditions_for_doctor_consultation_by_drug_name import run_tool_demo as run_tool_70
 
 from test.test_tool_FDA_get_drug_names_by_consulting_doctor_pharmacist_info import run_tool_demo as run_tool_71
 from test.test_tool_FDA_get_info_on_consulting_doctor_pharmacist_by_drug_name import run_tool_demo as run_tool_72
 from test.test_tool_FDA_get_drug_names_by_assembly_installation_info import run_tool_demo as run_tool_73
-from test.test_tool_FDA_get_assembly_installation_info_by_drug_name import run_tool_demo as run_tool_74
+#from test.test_tool_FDA_get_assembly_installation_info_by_drug_name import run_tool_demo as run_tool_74
 from test.test_tool_FDA_get_drug_names_by_boxed_warning import run_tool_demo as run_tool_75
 from test.test_tool_FDA_get_boxed_warning_info_by_drug_name import run_tool_demo as run_tool_76
-from test.test_tool_FDA_get_drug_name_by_calibration_instructions import run_tool_demo as run_tool_77
-from test.test_tool_FDA_get_calibration_instructions_by_drug_name import run_tool_demo as run_tool_78
+#from test.test_tool_FDA_get_drug_name_by_calibration_instructions import run_tool_demo as run_tool_77
+#from test.test_tool_FDA_get_calibration_instructions_by_drug_name import run_tool_demo as run_tool_78
 from test.test_tool_FDA_get_drugs_by_carcinogenic_mutagenic_fertility import run_tool_demo as run_tool_79
 from test.test_tool_FDA_get_carcinogenic_mutagenic_fertility_by_drug_name import run_tool_demo as run_tool_80
 
@@ -134,7 +134,7 @@ from test.test_tool_FDA_get_drug_name_by_dependence_info import run_tool_demo as
 
 from test.test_tool_FDA_get_dependence_info_by_drug_name import run_tool_demo as run_tool_91
 from test.test_tool_FDA_get_drug_names_by_disposal_info import run_tool_demo as run_tool_92
-from test.test_tool_FDA_get_disposal_info_by_drug_name import run_tool_demo as run_tool_93
+#from test.test_tool_FDA_get_disposal_info_by_drug_name import run_tool_demo as run_tool_93
 from test.test_tool_FDA_get_drug_name_by_dosage_info import run_tool_demo as run_tool_94
 from test.test_tool_FDA_get_drug_names_by_dosage_forms_and_strengths_info import run_tool_demo as run_tool_95
 from test.test_tool_FDA_get_dosage_forms_and_strengths_by_drug_name import run_tool_demo as run_tool_96
@@ -147,9 +147,9 @@ from test.test_tool_FDA_get_drug_names_by_drug_interactions import run_tool_demo
 from test.test_tool_FDA_get_drug_interactions_by_drug_name import run_tool_demo as run_tool_102
 from test.test_tool_FDA_get_drug_names_by_effective_time import run_tool_demo as run_tool_103
 from test.test_tool_FDA_get_effective_time_by_drug_name import run_tool_demo as run_tool_104
-from test.test_tool_FDA_get_drug_name_by_environmental_warning import run_tool_demo as run_tool_105
+#from test.test_tool_FDA_get_drug_name_by_environmental_warning import run_tool_demo as run_tool_105
 from test.test_tool_FDA_get_environmental_warning_by_drug_name import run_tool_demo as run_tool_106
-from test.test_tool_FDA_get_drug_names_by_food_safety_warnings import run_tool_demo as run_tool_107
+#from test.test_tool_FDA_get_drug_names_by_food_safety_warnings import run_tool_demo as run_tool_107
 from test.test_tool_FDA_get_drug_names_by_general_precautions import run_tool_demo as run_tool_108
 from test.test_tool_FDA_get_general_precautions_by_drug_name import run_tool_demo as run_tool_109
 from test.test_tool_FDA_get_drug_names_by_geriatric_use import run_tool_demo as run_tool_110
@@ -158,7 +158,7 @@ from test.test_tool_FDA_get_drug_names_by_geriatric_use import run_tool_demo as 
 
 # FDA Tools (from the first list provided in the initial prompt)
 from test.test_tool_FDA_get_geriatric_use_info_by_drug_name import run_tool_demo as run_tool_fda_111
-from test.test_tool_FDA_get_dear_health_care_provider_letter_info_by_drug_name import run_tool_demo as run_tool_fda_112 # (not working)
+#from test.test_tool_FDA_get_dear_health_care_provider_letter_info_by_drug_name import run_tool_demo as run_tool_fda_112 # (not working)
 from test.test_tool_FDA_get_drug_names_by_dear_health_care_provider_letter_info import run_tool_demo as run_tool_fda_113
 from test.test_tool_FDA_get_drug_names_by_health_claim import run_tool_demo as run_tool_fda_114
 from test.test_tool_FDA_get_health_claims_by_drug_name import run_tool_demo as run_tool_fda_115
@@ -174,8 +174,8 @@ from test.test_tool_FDA_get_information_for_owners_or_caregivers_by_drug_name im
 from test.test_tool_FDA_get_info_for_patients_by_drug_name import run_tool_demo as run_tool_fda_124
 from test.test_tool_FDA_get_drug_names_by_instructions_for_use import run_tool_demo as run_tool_fda_125
 from test.test_tool_FDA_get_instructions_for_use_by_drug_name import run_tool_demo as run_tool_fda_126
-from test.test_tool_FDA_retrieve_drug_name_by_device_use import run_tool_demo as run_tool_fda_127 # (not working)
-from test.test_tool_FDA_retrieve_device_use_by_drug_name import run_tool_demo as run_tool_fda_128 # (not working)
+#from test.test_tool_FDA_retrieve_drug_name_by_device_use import run_tool_demo as run_tool_fda_127 # (not working)
+#from test.test_tool_FDA_retrieve_device_use_by_drug_name import run_tool_demo as run_tool_fda_128 # (not working)
 from test.test_tool_FDA_get_drug_names_by_child_safety_info import run_tool_demo as run_tool_fda_129
 from test.test_tool_FDA_get_child_safety_info_by_drug_name import run_tool_demo as run_tool_fda_130
 
@@ -223,8 +223,8 @@ from test.test_tool_FDA_get_recent_changes_by_drug_name import run_tool_demo as 
 from test.test_tool_FDA_get_drug_name_by_reference import run_tool_demo as run_tool_fda_169
 from test.test_tool_FDA_get_reference_info_by_drug_name import run_tool_demo as run_tool_fda_170
 
-from test.test_tool_FDA_get_drug_names_by_residue_warning import run_tool_demo as run_tool_fda_171 # (not working)
-from test.test_tool_FDA_get_residue_warning_by_drug_name import run_tool_demo as run_tool_fda_172 # (not working)
+#from test.test_tool_FDA_get_drug_names_by_residue_warning import run_tool_demo as run_tool_fda_171 # (not working)
+#from test.test_tool_FDA_get_residue_warning_by_drug_name import run_tool_demo as run_tool_fda_172 # (not working)
 from test.test_tool_FDA_get_drug_names_by_risk import run_tool_demo as run_tool_fda_173
 from test.test_tool_FDA_get_risk_info_by_drug_name import run_tool_demo as run_tool_fda_174
 from test.test_tool_FDA_get_drug_names_by_route import run_tool_demo as run_tool_fda_175
@@ -268,12 +268,12 @@ from test.test_tool_FDA_get_drug_generic_name import run_tool_demo as run_tool_f
 
 
 # Special Tools
-from tooluniverse import Finish as run_tool_special_1
-from tooluniverse import Tool_RAG as run_tool_special_2
-from tooluniverse import CallAgent as run_tool_special_3
-from tooluniverse import get_joint_associated_diseases_by_HPO_ID_list as run_tool_special_4
-from tooluniverse import get_phenotype_by_HPO_ID as run_tool_special_5
-from tooluniverse import get_HPO_ID_by_phenotype as run_tool_special_6
+#from  import Finish as run_tool_special_1
+#from tooluniverse import Tool_RAG as run_tool_special_2
+#from tooluniverse import CallAgent as run_tool_special_3
+from test.test_tool_get_joint_associated_diseases_by_HPO_ID_list import run_tool_demo as run_tool_special_4
+from test.test_tool_get_phenotype_by_HPO_ID import run_tool_demo as run_tool_special_5
+from test.test_tool_get_HPO_ID_by_phenotype import run_tool_demo as run_tool_special_6
 
 if __name__ == "__main__":
     print("==== Running existing FDA tool tests ====\n")
@@ -286,26 +286,26 @@ if __name__ == "__main__":
     run_tool_56()
     run_tool_57()
     run_tool_58()
-    run_tool_59()
+    #run_tool_59()
     run_tool_60()
     run_tool_61()
     run_tool_62()
     run_tool_63()
     run_tool_64()
-    run_tool_65()
-    run_tool_66()
+    #run_tool_65()
+    #run_tool_66()
     run_tool_67()
-    run_tool_68()
+    #run_tool_68()
     run_tool_69()
     run_tool_70()
     run_tool_71()
     run_tool_72()
     run_tool_73()
-    run_tool_74()
+    #run_tool_74()
     run_tool_75()
     run_tool_76()
-    run_tool_77()
-    run_tool_78()
+    #run_tool_77()
+    #run_tool_78()
     run_tool_79()
     run_tool_80()
     run_tool_81()
@@ -320,7 +320,7 @@ if __name__ == "__main__":
     run_tool_90()
     run_tool_91()
     run_tool_92()
-    run_tool_93()
+    #run_tool_93()
     run_tool_94()
     run_tool_95()
     run_tool_96()
@@ -332,15 +332,15 @@ if __name__ == "__main__":
     run_tool_102()
     run_tool_103()
     run_tool_104()
-    run_tool_105()
+    #run_tool_105()
     run_tool_106()
-    run_tool_107()
+    #run_tool_107()
     run_tool_108()
     run_tool_109()
     run_tool_110()
 
     print("\n==== Running existing OpenTargets tool tests ====\n")
-    run_tool_11()
+    #run_tool_11()
     run_tool_12()
     run_tool_13()
     run_tool_14()
@@ -404,7 +404,7 @@ if __name__ == "__main__":
     print("==== Running tool test for FDA_get_geriatric_use_info_by_drug_name ====\n")
     run_tool_fda_111()
     print("==== Running tool test for (not working) FDA_get_dear_health_care_provider_letter_info_by_drug_name ====\n")
-    run_tool_fda_112()
+    #run_tool_fda_112()
     print("==== Running tool test for FDA_get_drug_names_by_dear_health_care_provider_letter_info ====\n")
     run_tool_fda_113()
     print("==== Running tool test for FDA_get_drug_names_by_health_claim ====\n")
@@ -434,9 +434,9 @@ if __name__ == "__main__":
     print("==== Running tool test for FDA_get_instructions_for_use_by_drug_name ====\n")
     run_tool_fda_126()
     print("==== Running tool test for (not working) FDA_retrieve_drug_name_by_device_use ====\n")
-    run_tool_fda_127()
+    #run_tool_fda_127()
     print("==== Running tool test for (not working) FDA_retrieve_device_use_by_drug_name ====\n")
-    run_tool_fda_128()
+    #run_tool_fda_128()
     print("==== Running tool test for FDA_get_drug_names_by_child_safety_info ====\n")
     run_tool_fda_129()
     print("==== Running tool test for FDA_get_child_safety_info_by_drug_name ====\n")
@@ -522,9 +522,9 @@ if __name__ == "__main__":
     print("==== Running tool test for FDA_get_reference_info_by_drug_name ====\n")
     run_tool_fda_170()
     print("==== Running tool test for (not working) FDA_get_drug_names_by_residue_warning ====\n")
-    run_tool_fda_171()
+    #run_tool_fda_171()
     print("==== Running tool test for (not working) FDA_get_residue_warning_by_drug_name ====\n")
-    run_tool_fda_172()
+    #run_tool_fda_172()
     print("==== Running tool test for FDA_get_drug_names_by_risk ====\n")
     run_tool_fda_173()
     print("==== Running tool test for FDA_get_risk_info_by_drug_name ====\n")
@@ -604,7 +604,7 @@ if __name__ == "__main__":
     # The special tools often require specific parameters or a running environment
     # that is not typically set up in a simple script. They are included for completeness
     # but may not execute successfully without further configuration.
-    try:
+    '''try:
         run_tool_special_1() # Finish
         print("Finish tool executed (if applicable).")
     except Exception as e:
@@ -628,7 +628,7 @@ if __name__ == "__main__":
         print("get_joint_associated_diseases_by_HPO_ID_list - call not executed, requires HPO IDs.")
     except Exception as e:
         print(f"Error with get_joint_associated_diseases_by_HPO_ID_list: {e}")
-
+    '''
     try:
         # Example: You'd need an HPO ID here.
         # run_tool_special_5(hpo_id="HP:0000118")
