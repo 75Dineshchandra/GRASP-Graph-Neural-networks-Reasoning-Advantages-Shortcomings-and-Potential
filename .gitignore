@@ -29,8 +29,8 @@ venv.bak/
 # Environment
 .env
 
-# Ignore all data files
-src/Code/data/
+# Ignore the primekg folder inside any data/ folder
+data/primekg/
 
 # Ignore all logs
 logs/
