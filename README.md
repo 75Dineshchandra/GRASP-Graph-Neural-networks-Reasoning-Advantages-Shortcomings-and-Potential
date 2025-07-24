@@ -128,14 +128,16 @@ Each modular tool is documented with a corresponding Markdown guide to help you 
 
 These scripts and guides help you build, explore, and query the PrimeKG biomedical graph using Python and Jupyter — no graph database required.
 
+
 | File / Script                             | Description                                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| [`Build_graph.py`](src/Code/PrimeKG/Build_graph.py) | 📦 Loads PrimeKG CSVs, builds a NetworkX graph, enriches with drug/disease features, adds BERT similarity links, and visualizes subgraphs interactively. Saves `.pkl` and `.png`. |
-| [`build_graph.md`](src/Code/PrimeKG/build_graph.md) | 📘 Detailed markdown guide covering graph construction, feature enrichment, size stats, node type distribution, BERT-based similarity, and visual query examples. |
-| [`KG_Query.ipynb`](src/Code/PrimeKG/KG_Query.ipynb) | 🔍 Interactive notebook to run entity-level queries like gene–disease–drug paths, similarity lookups, and multi-hop graph traversal using NetworkX. |
-| [`PrimeKG_Full_Query_Detailed.md`](src/Code/PrimeKG/PrimeKG_Full_Query_Detailed.md) | 📖 Query blueprint with detailed disease, drug, and gene examples — shows how to match entities from features CSVs, extract `node_index`, and query relations using pandas + NetworkX. |
+| [`Build_graph.py`](main/src/Code/PrimeKG/Build_graph.py) | 📦 Loads PrimeKG CSVs, builds a NetworkX graph, enriches with drug/disease features, adds BERT similarity links, and visualizes subgraphs interactively. Saves `.pkl` and `.png`. |
+| [`build_graph.md`](main/src/Code/PrimeKG/build_graph.md) | 📘 Detailed markdown guide covering graph construction, feature enrichment, size stats, node type distribution, BERT-based similarity, and visual query examples. |
+| [`KG_Query.ipynb`](main/src/Code/PrimeKG/KG_Query.ipynb) | 🔍 Interactive notebook to run entity-level queries like gene–disease–drug paths, similarity lookups, and multi-hop graph traversal using NetworkX. |
+| [`PrimeKG_Full_Query_Detailed.md`](main/src/Code/PrimeKG/PrimeKG_Full_Query_Detailed.md) | 📖 Query blueprint with detailed disease, drug, and gene examples — shows how to match entities from features CSVs, extract `node_index`, and query relations using pandas + NetworkX. |
 
-> 🗃️ All CSV data lives in `src/Code/data/primekg/`.  
+
+> 🗃️ All CSV data lives in `main/src/Code/data/primekg/`.  
 > 📊 Graph exports and neighborhood subgraphs are saved in `outputs/`.  
 > 🖼️ Visualizations include `primekg_full_graph.png`, drug–gene graphs, BERT clusters, and shortest path diagrams.
 
