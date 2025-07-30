@@ -52,13 +52,33 @@ cd KgTxAgent
 
 ## 📦 Installation
 
-Ensure you have Python 3.8+ installed:
-
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
+## ⚙️ Installation Instructions for ToolUniverse v0.2.0+
+
+> **Note:** ToolUniverse v0.2.0 requires **Python 3.10 or higher** due to new features like FDA-prefixed tools.
+
+---
+
+### 🐍 1. Check Your Python Version
+
+Run the following to check your current Python version:
+
+```bash
+python3 --version
+# or
+python --version
+
+### .Install the Latest ToolUniverse 
+
+Use the following command to install the latest version directly from GitHub:
+
+```bash
+python3.10 -m pip install --no-cache-dir --force-reinstall git+https://github.com/mims-harvard/ToolUniverse.git@main
+
 
 ## 📁 Repository Structure
 
