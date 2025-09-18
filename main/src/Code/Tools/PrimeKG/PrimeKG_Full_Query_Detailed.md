@@ -206,6 +206,6 @@ If no match is found:
 
 **PrimeKG Query** provides a **lightweight, reproducible template** for exploring biomedical knowledge graphs using simple Python and CSV workflows — no database deployment needed.
 
-[Drive]([url](https://drive.google.com/drive/folders/1w-JWdV64cBSS6FmRBvDUZemdw_RuPfMn?usp=sharing))
+[Drive]([https://drive.google.com/drive/folders/1w-JWdV64cBSS6FmRBvDUZemdw_RuPfMn?usp=sharing](https://drive.google.com/drive/folders/1w-JWdV64cBSS6FmRBvDUZemdw_RuPfMn?usp=sharing))
 
 ---
